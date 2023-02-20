@@ -1,0 +1,31 @@
+.wrapper {
+    display:flex;
+    height: 3.5rem;;
+    font-size: 1.1rem;
+    justify-content: space-between;
+    padding: 0 1rem;
+    align-items: center;
+    align-content: center;
+    background-color: var(--color-1);
+    box-shadow: 0 0 18px #726767;
+}
+
+.section-2 {
+    .list-menu {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .item-menu {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1rem;
+        
+    }
+
+    .link {
+        margin: 0 .5rem;
+    }
+}
