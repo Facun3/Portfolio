@@ -1,15 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-    --color-1: #ffd60a;
-    --color-2: #ffc300;
+    --color-header-main: #640d14;
+    --color-header-sub: #38040e;
 
-    --background-1: #003566;
+    --color-base: #ad2831;
+    --color-sub: #800e13;
+    
 }
 
 html, body{
     margin: 0px;
     padding: 0px;
     color: white;
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--background-1);
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: var(--color-sub);
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@for $i from 1 through 100 {
+    .add-delay-#{$i} {
+        animation-delay: #{$i /10}s;
+    }
 }
