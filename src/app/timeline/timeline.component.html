@@ -1,0 +1,16 @@
+<div class="container d-flex flew-wrap py-3" style="overflow-y: scroll;">
+	<div class="row">
+		<div>
+			<h3 class="mono">{{titulo}}</h3>
+			<ul class="timeline">
+				<li *ngFor="let evento of eventos">
+                    <h4 class="float-right">{{evento.lapse}}</h4>
+					<h4 style="font-weight: bold;">{{evento.title}}</h4>
+					<ng-container *ngFor="let content of evento.contents">
+						<p style="margin: 0; padding: 0;">» {{content}}</p><br>
+					</ng-container>				
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

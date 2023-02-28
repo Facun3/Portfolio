@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    align-content: center;
+    height: 10rem;
+}
+
+a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 10rem; 
+}
+
+.icon {
+    color: #fbeaea;
+    font-size: 5.5rem;
+}
+
+.base {
+    display: flex;
+    background-color: var(--color-base);
+    box-shadow: 0 0 18px #2a2828;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.base::after {
+    content: "";
+    background: var(--color-header-sub);
+    position: absolute;
+    z-index: -1;
+    display: block;
+    border-radius: 100%;
+    left: -150%;
+    right: -150%;
+    top: -150%;
+    bottom: -150%;
+    transform: scale(0, 0);
+    transition: all 0.5s ease;
+}
+
+.base:hover::after {
+    transition: all 0.7s ease-out;
+    transform: scale(1, 1);
+}

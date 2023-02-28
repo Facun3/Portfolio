@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  linkedin: string = "https://www.linkedin.com/in/facundo-choque/";
+  github: string = "https://github.com/Facun3";
+
   constructor() { }
 
   ngOnInit(): void {
