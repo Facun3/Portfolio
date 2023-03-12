@@ -1,25 +1,35 @@
+.fab-btn {
+    width: 70px;
+    height: 70px;
+    background: rgba(128, 14, 19, 0.7);
+    font-size: 2rem;
+}
+
 .container {
-    display: flex;
-    align-content: center;
-    height: 10rem;
+    background-color: var(--color-base);
+    box-shadow: 0 0 18px #2a2828;
 }
 
-a {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 10rem;
-    height: 10rem; 
+.contact-mob{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
 }
+.contact-desk{
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    background-color: var(--color-base);
+    box-shadow: 0 0 18px #2a2828;
 
-.icon {
-    color: #fbeaea;
-    font-size: 5.5rem;
+    i{
+        font-size: 4rem;
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .base {
-    display: flex;
     background-color: var(--color-base);
     box-shadow: 0 0 18px #2a2828;
     overflow: hidden;
@@ -45,4 +55,18 @@ a {
 .base:hover::after {
     transition: all 0.7s ease-out;
     transform: scale(1, 1);
+}
+
+
+@media (min-width: 576px) {
+    .contact-mob {
+        visibility: hidden;
+    }
+
+    .contact-desk {
+        visibility: visible;
+        width: 8rem;
+        height: 8rem;
+    }
+    
 }

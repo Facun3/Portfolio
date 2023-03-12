@@ -7,10 +7,9 @@ import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { SkillsComponent } from './skills/skills.component';
-import { FormDialog } from './contact-me/form-dialog/form-dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactModule } from './contact-me/contact.module';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,13 +17,13 @@ import { ContactModule } from './contact-me/contact.module';
     HeaderComponent,
     SidebarComponent,
     TimelineComponent,
-    SkillsComponent,
-    FormDialog
+    SkillsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,  
+    BrowserAnimationsModule,
+    HttpClientModule,  
     ContactModule
   ],
   providers: [],

@@ -1,5 +1,19 @@
 .container {
-    height: 10rem;
     background-color: var(--color-base);
     box-shadow: 0 0 18px #2a2828;
+}
+
+@media (min-width: 1199.99px) and (max-width: 1920px){
+    .container{
+        font-size: small;
+        margin-top: 18px;
+    }
+
+    h3 {
+        font-size: 1.6rem;
+    }
+
+    h4 {
+        font-size: 1.4rem;
+    }
 }

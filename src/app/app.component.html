@@ -1,12 +1,22 @@
-<app-header></app-header>
-<div class="main d-flex flex-wrap">
-  <div class="row">
-    <app-sidebar class="col-12 col-sm-12 col-md-6 col-lg-4"></app-sidebar>
-    <app-timeline class="col-12 col-sm-12 col-md-3 col-lg-4" title="Experiencia" [events]="experiencia"></app-timeline>
-    <app-timeline class="col-12 col-sm-12 col-md-3 col-lg-4" title="Educación" [events]="educacion"></app-timeline>
-  </div>
-  <div class="row mt-3">
-    <app-skills class="col-12 col-sm-12 col-md-10 col-lg-10"></app-skills>
-    <app-contact class="col-12 col-sm-12 col-md-2 col-lg-2" title="Contactame!"></app-contact>
+<ng-container *ngIf="background">
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
+</ng-container>
+<div>
+  <app-header></app-header>
+  <div class="main d-flex flex-wrap">
+    <div class="row justify-content-center">
+      <app-sidebar class="col-12 col-sm-12 col-md-12 col-lg-4 mb-2 animate__animated animate__fadeInLeft "></app-sidebar>
+      <app-timeline class="col-12 col-sm-12 col-md-6 col-lg-4 mb-2 animate__animated animate__fadeInLeft add-delay-2" title="Educación" [events]="educacion"></app-timeline>
+      <app-timeline class="col-12 col-sm-12 col-md-6 col-lg-4 mb-2 animate__animated animate__fadeInLeft add-delay-3" title="Experiencia" [events]="experiencia"></app-timeline>
+      <ng-container>
+        <app-skills class="col-12 col-sm-12 col-md-7 col-lg-8 mb-1 animate__animated animate__fadeInLeft add-delay-4"></app-skills>
+        <app-contact class="col-12 col-sm-12 col-md-1 col-lg-1 mb-2" title="Contactame!"></app-contact>
+      </ng-container>
+      <div class="message animate__animated animate__fadeIn add-delay-20" >
+        <p>Made with Angular, Bootstrap and patience <button style="background-color: transparent; border-color: transparent; " (click)="changeBack()">🖤</button></p>
+      </div>
+    </div>
   </div>
 </div>

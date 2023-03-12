@@ -1,25 +1,74 @@
-<h1 mat-dialog-title>Delete file</h1>
-<div mat-dialog-content>
-  Would you like to delete cat.jpeg?
+<h3>Envíame un Mail</h3>
+<div mat-dialog-content class="mb-2">
+  <div class="form-group">
+    <form [formGroup]="mailForm">
+      <mat-form-field appearance="fill">  
+        <mat-label>Asunto</mat-label>
+        <input matInput type="text" #name formControlName="asunto" >
+        <mat-error >Por favor ingrese al menos 10 carácteres.</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">  
+        <mat-label>Mail</mat-label>
+        <input matInput type="mail" #email formControlName="mail" >
+        <mat-error >Por favor ingrese un mail válido.</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Mensaje</mat-label>
+        <textarea matInput
+                  cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMinRows="1"
+                  cdkAutosizeMaxRows="5"
+                  formControlName="content"
+                  #message></textarea>
+        <mat-error>Por favor ingrese al menos 20 carácteres.</mat-error>
+      </mat-form-field>
+    </form>  
+  </div>
 </div>
-<div mat-dialog-actions>
-  <button mat-button mat-dialog-close>No</button>
-  <button mat-button mat-dialog-close cdkFocusInitial>Ok</button>
-</div>
+<div mat-dialog-actions class="d-flex flex-row justify-content-around">
+  <button mat-raised-button color="warn" type="button" [mat-dialog-close]="true"[disabled]="mailForm.invalid" (click)="sendEmail(name.value, email.value, message.value)">Enviar</button>
+  <button mat-raised-button mat-dialog-close >Volver</button>
+</div> 
+<!-- <div class="form-group">
+  <div class="form-row">
+      <div class="col mb-2" hintLabel="Max 10 characters">
+          <input type="text" name="name" class="form-control" placeholder="Asunto" formControlName="asunto" >
+          <mat-hint>asdasdas</mat-hint>                    
+      </div>
+      <div class="col mb-2">
+        <input type="email" name="email" class="form-control" placeholder="Mail para responder" formControlName="mail" >
+      </div>
+  </div>
+  <textarea placeholder="Contenido" class="form-control" name="message" rows="10" formControlName="content" ></textarea>
+</div> -->
 
-<!-- <form [action]="send" method="POST">
-        <div class="form-group">
-            <div class="form-row">
-                <div class="col">
-                    <input type="text" name="name" class="form-control" placeholder="Full Name" required>
-                  </div>
-                  <div class="col">
-                    <input type="email" name="email" class="form-control" placeholder="Email Address" required>
-                  </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
-        </div>
-        <button type="submit">Submit Form</button>
-</form> -->
+
+<!-- <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput formControlName="mail" placeholder="messitequiero@example.com">
+          <mat-hint>Errors appear instantly!</mat-hint>
+          <mat-error *ngIf="mail.hasError('email') && !mail.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="mail.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field> -->
+
+
+        <!-- <div class="example-container">
+          <mat-form-field hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>Enter some input</mat-label>
+            <input matInput #input maxlength="10" placeholder="Ex. Nougat">
+            <mat-hint align="end">{{input.value.length}}/10</mat-hint>
+          </mat-form-field>
+        
+          <mat-form-field appearance="fill">
+            <mat-label>Select me</mat-label>
+            <mat-select>
+              <mat-option value="option">Option</mat-option>
+            </mat-select>
+            <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+          </mat-form-field>
+        </div> -->

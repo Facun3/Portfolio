@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { utf8Encode } from '@angular/compiler/src/util';
+import { AfterViewInit, Component, ElementRef } from '@angular/core';
 import { TimelineEvent } from './interfaces/event.interface';
 
 @Component({
@@ -6,9 +7,18 @@ import { TimelineEvent } from './interfaces/event.interface';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit{
+  
+  constructor(private elementRef: ElementRef){
+    
+  }
+  ngAfterViewInit() {
+    this.elementRef.nativeElement.ownerDocument
+        .body.style.backgroundColor = 'var(--color-sub)';
+}
   
   title = 'Portfolio';
+  public background: boolean = false;
 
   public experiencia: TimelineEvent[] = [
     {
@@ -54,4 +64,9 @@ export class AppComponent {
     },
     
   ];
+
+
+  changeBack(): void {
+    this.background = !this.background;
+  }
 }

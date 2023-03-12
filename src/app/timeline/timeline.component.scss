@@ -1,14 +1,13 @@
 .container {
     background-color: var(--color-base);
     box-shadow: 0 0 18px #2a2828;
-    max-height: 40rem;
-    height: 40rem;
+    overflow-x: hidden;
 }
 
 ul.timeline {
     list-style-type: none;
     position: relative;
-    line-height: 1.1rem;
+    // line-height: 1.1rem;
 }
 ul.timeline:before {
     content: ' ';
@@ -35,4 +34,62 @@ ul.timeline > li:before {
     width: 20px;
     height: 20px;
     z-index: 400;
+}
+
+// Medium devices (tablets, less than 992px)
+@media (min-width: 768px) {
+    .container{
+        min-height: 50vh;
+        font-size: 15px;
+        height: 75vh;
+    }
+
+    html {
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+      
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+      
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: var(--color-back);
+    }
+      
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    } 
+}
+
+@media (min-width: 992px){
+    .container{
+        height: 75vh;
+        font-size: 15px;
+    }
+
+    // h3 {
+    //     font-size: 1.6rem;
+    // }
+
+    // h4 {
+    //     font-size: 1.4rem;
+    // }
+}
+
+@media (min-width: 1400px){
+
+    .container{
+        height: 75vh;
+        height: 75vh;
+        font-size: 16px;
+        overflow-y: hidden !important;
+    }
+
 }
